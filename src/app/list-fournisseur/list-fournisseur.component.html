@@ -1,0 +1,29 @@
+<div class="row justify-content-center p-5">
+    <div class="row col-12 text-center p-5">
+      <button style="color: white" routerLink="/" class="btn btn-info col-1">
+        HOME
+      </button>
+      <div class="col-1"></div>
+      <h1 class="col-6">Jallouli Yassine 4TWIN7</h1>
+    </div>
+  
+    <div class="row col-12 p-5">
+      <h1>atelier 1 : exercice 2</h1>
+    </div>
+    
+    <div *ngFor="let f of list  , let i=index">
+
+        <!-- check list-fournisseur.component.css -->
+        <div (dblclick)="deleteFournisseur(i)" [ngClass]="{'green': f.libelle==='hp', 'yellow':  f.libelle!=='hp'}" *ngIf="f.idFournisseur <= 100" class="card mb-3">
+            <h4 class="card-header"> idFournisseur : {{f.idFournisseur}} </h4>
+            <div class="card-body">
+                <h6 [ngStyle]="{'font-weight': getWeight(f.code)}"  class="card-title"> code : {{f.code}}</h6>
+                <h6 class="card-title"> libelle : {{f.libelle}}</h6>
+            </div>
+        </div>
+
+    </div>
+    
+    
+  </div>
+  

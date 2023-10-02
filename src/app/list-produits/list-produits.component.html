@@ -1,0 +1,54 @@
+<div class="row justify-content-center p-5">
+  <div class="row col-12 text-center p-5">
+    <button style="color: white" routerLink="/" class="btn btn-info col-1">
+      HOME
+    </button>
+    <div class="col-1"></div>
+    <h1 class="col-6">Jallouli Yassine 4TWIN7</h1>
+  </div>
+
+  <div class="row col-12 p-5">
+    <h1>atelier 2</h1>
+  </div>
+
+
+  <!-- AJOUTER PRODUIT-->
+  <div class="p-5 justify-content-center text-center">
+    <h1>ajouter produit</h1>
+    <div class="form-group mb-3">
+        <input [(ngModel)]="idProduit" type="number" class="form-control" placeholder="Enter id produit">
+      </div>
+      <div class="form-group mb-3">
+        <input [(ngModel)]="code" type="text" class="form-control"  placeholder="code">
+      </div>
+      <div class="form-group mb-3">
+        <input [(ngModel)]="libelle" type="text" class="form-control"  placeholder="libelle">
+      </div>
+      <div class="form-group mb-3">
+        <input [(ngModel)]="prixUnitaire" type="number" class="form-control"  placeholder="prixUnitaire">
+      </div>
+      <div class="form-group mb-3">
+        <input [(ngModel)]="tauxTVA" type="number" class="form-control"  placeholder="tauxTVA">
+      </div>
+
+      <button type="submit" (click)="ajouterProduit()" class="btn btn-info">AJOUTER</button>
+      
+  <!-- chercher PRODUIT-->
+      <div class="form-group p-5">
+        CHERCHER AVEC CODE : <input type="text"  class="form-control"  placeholder="Enter code"  [(ngModel)]="codeR">
+      </div>
+</div>
+ <!-- AJOUTER PRODUIT-->
+  <div  *ngFor="let p of filterProductWithCode() , let i = index" [ngClass]="{'txt' : p.prixUnitaire<=50}" [ngStyle]="{'color': getColor(p.prixUnitaire)}" class="card mb-3">
+    <h4 class="card-header">produit : {{ p.idProduit }}</h4>
+    <div  class="card-body">
+      <h4 style="color: rgb(255, 128, 0);" class="card-title">{{p.message}}</h4>
+      <h6 class="card-title">code : {{ p.code }}</h6>
+      <h6 class="card-title">prixUnitaire : {{ p.prixUnitaire }}</h6>
+      <h6 class="card-title">tauxTVA : {{ p.tauxTVA }}</h6>
+      <button (click)="changerTva(p)" [disabled]="p.tauxTVA === 0.02" class="btn btn-warning">
+        Ajuster TVA
+      </button>
+    </div>
+  </div>
+</div>
