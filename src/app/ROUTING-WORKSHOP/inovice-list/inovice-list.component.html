@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <ul *ngFor="let i of getList(); let index = index">
+    <li>
+      Facture : {{ index+1 }}
+      <a  [routerLink]="['/inovice', i.idFacture, i.active]">Details</a>
+      <a  style="margin-left: 20px;" [routerLink]="['/invoice']" [queryParams]="{ id: i.idFacture, active: i.active }">QP Details</a>
+    </li>
+  </ul>
+  
+</div>

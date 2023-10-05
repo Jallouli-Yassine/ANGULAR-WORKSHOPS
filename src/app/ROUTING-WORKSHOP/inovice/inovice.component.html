@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+
+<a style="margin-left: 20px;" class="btn btn-info mt-5" (click)="goToBack()" >Back</a>
+
+<div class="justify-content-center text-center" *ngIf="facture?.active; else noDetailsTemplate" >
+  <h1>montantFacture : {{facture?.montantFacture}} </h1>
+  <h1>montantRemise : {{facture?.montantRemise}}</h1>
+  <h1>dateFacture : {{facture?.dateFacture}}</h1>
+</div>
+
+<ng-template #noDetailsTemplate >
+  <h1 class="justify-content-center text-center">Impossible de visualiser les détails de la facture!</h1>
+  </ng-template>
+

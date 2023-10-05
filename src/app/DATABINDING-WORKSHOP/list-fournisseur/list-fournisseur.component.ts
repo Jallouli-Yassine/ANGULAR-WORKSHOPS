@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Fournisseur } from '../models/fournisseur';
+import { Fournisseur } from '../../models/fournisseur';
 
 @Component({
   selector: 'app-list-fournisseur',
