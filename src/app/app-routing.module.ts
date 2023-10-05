@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'inovice/:id/:active',
     component: InoviceComponent,
   },
+  {
+    path: 'invoice',
+    component: InoviceComponent,
+  },
 ];
 
 @NgModule({
