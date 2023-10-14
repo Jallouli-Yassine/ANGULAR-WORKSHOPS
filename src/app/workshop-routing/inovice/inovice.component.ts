@@ -24,6 +24,6 @@ export class InoviceComponent implements OnInit {
   }
 
   goToBack(){
-    this.router.navigate(['/main-inovice']);
+    this.router.navigate(['/atelier3/main-inovice']);
   }
 }

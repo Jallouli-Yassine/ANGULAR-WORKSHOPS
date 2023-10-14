@@ -9,11 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { FournisseurComponent } from './DATABINDING-WORKSHOP/fournisseur/fournisseur.component';
 import { ListFournisseurComponent } from './DATABINDING-WORKSHOP/list-fournisseur/list-fournisseur.component';
 import { ListProduitsComponent } from './DATABINDING-WORKSHOP/list-produits/list-produits.component';
-import { MainInoviceComponent } from './ROUTING-WORKSHOP/main-inovice/main-inovice.component';
-import { InoviceListComponent } from './ROUTING-WORKSHOP/inovice-list/inovice-list.component';
-import { InoviceComponent } from './ROUTING-WORKSHOP/inovice/inovice.component';
-import { NavbarComponent } from './ROUTING-WORKSHOP/navbar/navbar.component';
-import { Homew3Component } from './ROUTING-WORKSHOP/homew3/homew3.component';
 
 
 @NgModule({
@@ -23,11 +18,6 @@ import { Homew3Component } from './ROUTING-WORKSHOP/homew3/homew3.component';
     FournisseurComponent,
     ListFournisseurComponent,
     ListProduitsComponent,
-    MainInoviceComponent,
-    InoviceListComponent,
-    InoviceComponent,
-    NavbarComponent,
-    Homew3Component,
   ],
   imports: [
     BrowserModule,
