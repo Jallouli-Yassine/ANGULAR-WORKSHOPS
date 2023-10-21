@@ -1,41 +1,67 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Produits } from '../../models/produits';
+import { Product } from 'src/app/models/products/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-list-produits',
   templateUrl: './list-produits.component.html',
   styleUrls: ['./list-produits.component.css'],
 })
-export class ListProduitsComponent {
-    codeR!: string;
+export class ListProduitsComponent implements OnInit {
+    /*******************ATELIER 4 SERVICES*************************/
+  constructor(private ProductService: ProductService) {}
 
-    idProduit!: number;
-    code!: string;
-    libelle!: string;
-    prixUnitaire!: number;
-    tauxTVA!: number;
+  ListProduct: Product[] = [];
+  nbProduitAvecLibele: number | undefined ;
 
-  filterProductWithCode(){
-    return !this.codeR ? this.list : this.list.filter(p=>
-      p.code.toLowerCase().startsWith(this.codeR.toLocaleLowerCase())
+  ngOnInit(): void {
+    this.ListProduct = this.ProductService.getAllProducts();
+  }
+
+  calculerNbPLibelle(libelle:string){
+    this.nbProduitAvecLibele=this.ProductService.getNbProductsByLibelle(libelle);
+
+  }
+
+  /***********************************************/
+
+  codeR!: string;
+  idProduit!: number;
+  code!: string;
+  libelle!: string;
+  prixUnitaire!: number;
+  tauxTVA!: number;
+
+  filterProductWithCode() {
+    return !this.codeR
+      ? this.list
+      : this.list.filter((p) =>
+          p.code.toLowerCase().startsWith(this.codeR.toLocaleLowerCase())
+        );
+  }
+
+  clearInputs() {
+    this.idProduit = null!;
+    this.code = '';
+    this.libelle = '';
+    this.prixUnitaire = null!;
+    this.tauxTVA = null!;
+  }
+
+  ajouterProduit() {
+    const produit = new Produits(
+      this.idProduit,
+      this.code,
+      this.libelle,
+      this.prixUnitaire,
+      this.tauxTVA,
+      ''
     );
-  }
-  
-  clearInputs(){
-    this.idProduit= null!;
-    this.code= '';
-    this.libelle= '';
-    this.prixUnitaire= null!;
-    this.tauxTVA= null!;
-  }
-
-  ajouterProduit(){
-    const produit = new Produits(this.idProduit, this.code, this.libelle, this.prixUnitaire, this.tauxTVA, '');
     this.list.push(produit);
     this.clearInputs();
-
   }
-  
+
   list: Produits[] = [
     {
       idProduit: 1,
@@ -84,11 +110,7 @@ export class ListProduitsComponent {
     return (p.tauxTVA = 0.02);
   }
 
-
   getColor(prixUnitaire: number) {
     return prixUnitaire <= 50 ? 'blue' : 'black';
   }
-
-
-
 }

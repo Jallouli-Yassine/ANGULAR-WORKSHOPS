@@ -38,7 +38,7 @@
         CHERCHER AVEC CODE : <input type="text"  class="form-control"  placeholder="Enter code"  [(ngModel)]="codeR">
       </div>
 </div>
- <!-- AJOUTER PRODUIT-->
+ <!-- afficher PRODUIT-->
   <div  *ngFor="let p of filterProductWithCode() , let i = index" [ngClass]="{'txt' : p.prixUnitaire<=50}" [ngStyle]="{'color': getColor(p.prixUnitaire)}" class="card mb-3">
     <h4 class="card-header">produit : {{ p.idProduit }}</h4>
     <div  class="card-body">
@@ -48,6 +48,21 @@
       <h6 class="card-title">tauxTVA : {{ p.tauxTVA }}</h6>
       <button (click)="changerTva(p)" [disabled]="p.tauxTVA === 0.02" class="btn btn-warning">
         Ajuster TVA
+      </button>
+    </div>
+  </div>
+  <h1 class="text-center">ATELIER 4 SERVICES</h1>
+ <!-- afficher PRODUCTS-->
+ <h1>nb Products du meme libelle : ( {{nbProduitAvecLibele}} )</h1>
+  <div  *ngFor="let p of ListProduct , let i = index" class="card mb-3">
+    <h4 class="card-header">produit : {{ p.id }}</h4>
+    <div  class="card-body">
+      <h6 class="card-title">code : {{ p.code }}</h6>
+      <h6 class="card-title">prixUnitaire : {{ p.prixunitaire }}</h6>
+      <h6 class="card-title">tauxTVA : {{ p.tauxTva }}</h6>
+      <h6 class="card-title">libelle : {{ p.libelle }}</h6>
+      <button (click)="calculerNbPLibelle(p.libelle)" class="btn btn-warning">
+        CALCULER
       </button>
     </div>
   </div>
