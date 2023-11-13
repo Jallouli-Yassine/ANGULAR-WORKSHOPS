@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <button style="color: white" routerLink="add" class="btn btn-info col-1">
+        Add User
+      </button>
+    <h1 class="mt-4 mb-3">Workshop Les services dans Angular</h1>
+
+    <ul *ngFor="let u of listUsers; let index = index">
+        <li>
+            User {{ index+1 }}:
+            {{u.firstName}}
+            <button (click)="fetchNbInList(u)" class="btn btn-info">calculer</button>
+        </li>
+    </ul>
+
+
+    <h1 class="mt-4 mb-3">Workshop Le service HttpClient</h1>
+
+    <ul *ngFor="let u of listUsersApi; let i = index">
+        <li>
+            User {{ i+1 }}:
+            {{u.firstName}}
+            <button (click)="fetchNbInList(u)" class="btn btn-info">calculer</button>
+            <button (click)="deleteUser(u,i)" class="btn btn-danger">delete</button>
+            <button routerLink="update/{{u.id}}" class="btn btn-warning">modifier</button>
+            <button routerLink="detail/{{u.id}}" class="btn btn-secondary">details</button>
+        </li>
+    </ul>
+
+</div>

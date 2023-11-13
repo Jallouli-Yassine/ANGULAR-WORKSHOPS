@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row justify-content-center">
+  
+      <div class="col-md-6">
+        <form #AddFormUser="ngForm" (ngSubmit)="save(AddFormUser)">
+          <div class="form-group">
+            <h2>add user</h2>
+            <label for="fn">First name</label>
+            <input type="text" class="form-control" id="fn" ngModel name="firstName" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="ln">Last name</label>
+            <input type="text" class="form-control" id="ln" ngModel name="lastName" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="bd">Birthdate</label>
+            <input type="text" class="form-control" id="bd" ngModel name="birthDate">
+          </div>
+  
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" ngModel name="email" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="accountCategory">Account Category</label>
+            <input type="text" class="form-control" id="accountCategory" ngModel name="accountCategory" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" id="password" ngModel name="password" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="picture">Picture</label>
+            <input type="text" class="form-control" id="picture" ngModel name="picture">
+          </div>
+  
+          <div class="form-group">
+            <label for="profession">Profession</label>
+            <input type="text" class="form-control" id="profession" ngModel name="profession">
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+      </div>
+    </div>
+  </div>

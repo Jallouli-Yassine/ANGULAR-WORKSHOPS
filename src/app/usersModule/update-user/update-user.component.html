@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row justify-content-center">
+  
+      <div class="col-md-6">
+        <h2>Update  user</h2>
+        <form #formUser="ngForm" (ngSubmit)="update(formUser)">
+
+          <div class="form-group">
+            <label for="fn">ID</label>
+            <input disabled type="text" class="form-control" id="id" ngModel name="id" required [(ngModel)]="user.id">
+          </div>
+
+          <div class="form-group">
+
+            <label for="fn">First name</label>
+            <input type="text" class="form-control" id="fn" ngModel name="firstName" required [(ngModel)]="user.firstName">
+          </div>
+  
+          <div class="form-group">
+            <label for="ln">Last name</label>
+            <input type="text" class="form-control" id="ln" ngModel name="lastName" required [(ngModel)]="user.lastName">
+          </div>
+  
+          <div class="form-group">
+            <label for="bd">Birthdate</label>
+            <input type="text" class="form-control" id="bd" ngModel name="birthDate" [(ngModel)]="user.birthDate">
+          </div>
+  
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" ngModel name="email" required  [(ngModel)]="user.email" >
+          </div>
+  
+          <div class="form-group">
+            <label for="accountCategory">Account Category</label>
+            <input type="text" class="form-control" id="accountCategory" ngModel name="accountCategory" required  [(ngModel)]="user.accountCategory">
+          </div>
+  
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" id="password" ngModel name="password" required [(ngModel)]="user.password">
+          </div>
+  
+          <div class="form-group">
+            <label for="picture">Picture</label>
+            <input type="text" class="form-control" id="picture" ngModel name="picture" [(ngModel)]="user.picture" >
+          </div>
+  
+          <div class="form-group">
+            <label for="profession">Profession</label>
+            <input type="text" class="form-control" id="profession" ngModel name="profession" [(ngModel)]="user.profession">
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>

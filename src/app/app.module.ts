@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { FournisseurComponent } from './DATABINDING-WORKSHOP/fournisseur/fournisseur.component';
 import { ListFournisseurComponent } from './DATABINDING-WORKSHOP/list-fournisseur/list-fournisseur.component';
 import { ListProduitsComponent } from './DATABINDING-WORKSHOP/list-produits/list-produits.component';
+import { HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -18,11 +19,15 @@ import { ListProduitsComponent } from './DATABINDING-WORKSHOP/list-produits/list
     FournisseurComponent,
     ListFournisseurComponent,
     ListProduitsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
