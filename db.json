@@ -54,6 +54,30 @@
       "password": "test",
       "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
       "profession": "Software Engineer"
+    },
+    {
+      "firstName": "marcoo",
+      "lastName": "ter stegen",
+      "birthDate": "24 03 2000",
+      "email": "marco@gmail.com",
+      "accountCategory": "Customer",
+      "password": "passs",
+      "profession": "dahen",
+      "autre": {
+        "email": "",
+        "fb": ""
+      },
+      "id": 6
+    },
+    {
+      "firstName": "yassine",
+      "lastName": "jallouli",
+      "birthDate": "2023-11-11",
+      "email": "yassinejalloulitech@gmail.com",
+      "accountCategory": "Customer",
+      "password": "dehehehehe54184",
+      "profession": "baaataaal",
+      "id": 7
     }
   ]
 }
