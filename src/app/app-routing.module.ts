@@ -25,11 +25,15 @@ const routes: Routes = [
   },
   {
     path: 'atelier3',loadChildren:()=>import('./workshop-routing/workshop-routing.module')
-    .then(mod=> mod.WorkshopRoutingModule )
+    .then(mod=> mod.WorkshopRoutingModule)
   },
   {
     path: 'user',loadChildren:()=>import('./usersModule/users.module')
-    .then(mod=> mod.UsersModule )
+    .then(mod=> mod.UsersModule)
+  },
+  {
+    path: 'test',loadChildren:()=>import('./test/test.module')
+    .then(mod=> mod.TestModule)
   },
 
 ];

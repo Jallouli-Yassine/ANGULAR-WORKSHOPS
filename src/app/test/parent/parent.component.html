@@ -1,0 +1,12 @@
+<p>parent works!</p>
+
+<app-child [modifierNom]="myName"  (info)="users=$event"></app-child>
+<!--
+[esm variable l feragh li fi child] bech tbaath mel parent lel child
+
+(esm variable l m3eby li fi child) bech tjibou mel child lel parent
+-->
+
+{{
+users.length
+}}
