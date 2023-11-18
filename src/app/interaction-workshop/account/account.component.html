@@ -1,0 +1,15 @@
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{getImage}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{getTitre}} </h5>
+                <p class="card-text">{{getDescription}}</p>
+                <a (click)="filterUsers(getTitre)" class="btn btn-primary">show all</a>
+                <!-- Assuming 'user' is an object in your component containing user details -->
+
+                 <button class="btn btn-danger ml-5" type="button" (click)="deleteAccount()">
+                     Delete
+                 </button>
+
+            </div>
+        </div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="mt-5 row">
+        <div *ngFor="let a of accounts , let i=index" class="mb-4  col-md-4">
+            <app-account
+                    [ajouterTitre]="a.title"
+                    [ajouterDescription]="a.description"
+                    [ajouterImage]="a.image"
+                    (deleteEmitter)="deleteAccount(i)"
+                    (filterEmitter)="filterUsers($event)"
+            >
+            </app-account>
+        </div>
+    </div>
+
+<app-add-account (form)="addAccount($event)"></app-add-account>
+
+<div *ngFor="let u of users">
+    <ul>
+        <li>
+           category : {{u.accountCategory}}
+        </li>
+        <li>
+            name : {{u.firstName}}
+        </li>
+    </ul>
+
+</div>
+</div>

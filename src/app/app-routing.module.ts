@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'test',loadChildren:()=>import('./test/test.module')
     .then(mod=> mod.TestModule)
   },
+  {
+    path: 'workshopInteraction',loadChildren:()=>import('./interaction-workshop/interaction-workshop.module')
+    .then(mod=> mod.InteractionWorkshopModule)
+  },
 
 ];
 

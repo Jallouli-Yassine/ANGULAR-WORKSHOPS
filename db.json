@@ -79,5 +79,31 @@
       "profession": "baaataaal",
       "id": 7
     }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "title": "Admin Account",
+      "image": "https://bootdey.com/img/Content/avatar/avatar3.png",
+      "description": "admin acount has privileges to manage service for other people in the app"
+    },
+    {
+      "id": 2,
+      "title": "Customer Account",
+      "image": "https://bootdey.com/img/Content/avatar/avatar2.png",
+      "description": "admin account has privileges to manage service for other people in the app"
+    },
+    {
+      "id": 3,
+      "title": "Golden Account",
+      "image": "https://bootdey.com/img/Content/avatar/avatar1.png",
+      "description": "Golden account has privileges to manage service for other people in the app"
+    },
+    {
+      "title": "wood Account",
+      "image": "https://bootdey.com/img/Content/avatar/avatar5.png",
+      "description": "wood Account has privileges to manage service for other people in the app",
+      "id": 4
+    }
   ]
 }
